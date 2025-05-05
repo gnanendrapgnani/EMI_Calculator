@@ -39,7 +39,6 @@ const Header = ({ darkMode, setDarkMode }) => {
       <List>
         {navLinks.map((link) => (
           <ListItem
-            // button={true}
             key={link.path}
             component={Link}
             to={link.path}
@@ -56,7 +55,6 @@ const Header = ({ darkMode, setDarkMode }) => {
     <>
       <AppBar position="static">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          {/* Left Section */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {isMobile && (
               <IconButton
@@ -68,14 +66,12 @@ const Header = ({ darkMode, setDarkMode }) => {
                 <MenuIcon />
               </IconButton>
             )}
-            <Typography variant="h6" noWrap>
-              Loan Calculator
-            </Typography>
+            <Typography variant="h6">Loan Calculator</Typography>
           </Box>
-          <Box display="flex" alignItems="center">
-            {/* Center Nav Links (Desktop only) */}
+
+          <Box display="flex" alignItems="center" flexWrap="wrap">
             {!isMobile && (
-              <Box sx={{ display: "flex", gap: 3 }}>
+              <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
                 {navLinks.map((link) => (
                   <Box
                     key={link.path}
@@ -86,8 +82,9 @@ const Header = ({ darkMode, setDarkMode }) => {
                       textDecoration: "none",
                       fontWeight: 500,
                       px: 2,
-                      py: 0.5,
-                      borderRadius: 1,
+                      py: 1,
+                      borderRadius: 2,
+                      whiteSpace: "nowrap",
                       backgroundColor:
                         location.pathname === link.path
                           ? "rgba(255, 255, 255, 0.2)"
@@ -101,19 +98,17 @@ const Header = ({ darkMode, setDarkMode }) => {
                     {link.label}
                   </Box>
                 ))}
+                <Switch
+                  checked={darkMode}
+                  onChange={() => setDarkMode(!darkMode)}
+                  color="default"
+                />
               </Box>
             )}
-
-            <Switch
-              checked={darkMode}
-              onChange={() => setDarkMode(!darkMode)}
-              color="default"
-            />
           </Box>
         </Toolbar>
       </AppBar>
 
-      {/* Drawer (only on mobile) */}
       {isMobile && (
         <Drawer
           anchor="left"

@@ -14,6 +14,7 @@ import {
   Paper,
 } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useCurrency } from "../context/context";
 
 const Home = () => {
   const [fields, setFields] = useState({
@@ -29,7 +30,7 @@ const Home = () => {
   });
 
   const [emi, setEmi] = useState(null);
-  const [currency, setCurrency] = useState("USD");
+  const { currency, setCurrency } = useCurrency();
   const [convertedEmi, setConvertedEmi] = useState(null);
   const [exchangeRates, setExchangeRates] = useState({});
   const [schedule, setSchedule] = useState([]);
@@ -79,10 +80,8 @@ const Home = () => {
     }
 
     const monthlyEmi = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
-
     setEmi(monthlyEmi.toFixed(2));
 
-    // Amortization schedule
     const scheduleArr = [];
     let balance = P;
 
@@ -179,7 +178,7 @@ const Home = () => {
         <Button
           variant="contained"
           onClick={calculateEMI}
-          sx={{ height: "56px" }}
+          sx={{ height: "56px", mt: 2 }}
         >
           Calculate
         </Button>

@@ -10,27 +10,15 @@ import {
   Paper,
   TablePagination,
 } from "@mui/material";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import useExchangeRates from "../hooks/useExchangeRates";
 
 const Exchange = () => {
-  const [currency, setCurrency] = useState(null);
+  const exchangeRates = useExchangeRates();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  useEffect(() => {
-    fetchCurrencyData();
-  }, []);
-
-  const fetchCurrencyData = async () => {
-    try {
-      const APILink = import.meta.env.VITE_API_EXCHANGE_RATE;
-      const response = await axios.get(APILink);
-      setCurrency(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const baseCurrency = "USD";
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -41,12 +29,14 @@ const Exchange = () => {
     setPage(0);
   };
 
+  const currencies = Object.entries(exchangeRates);
+
   return (
     <Container sx={{ marginY: "10px" }}>
-      {currency ? (
+      {currencies.length > 0 ? (
         <>
           <Typography variant="h5" gutterBottom>
-            Exchange Rates Based on: {currency.base_code}
+            Exchange Rates Based on: {baseCurrency}
           </Typography>
 
           <TableContainer component={Paper}>
@@ -62,7 +52,7 @@ const Exchange = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {Object.entries(currency.conversion_rates)
+                {currencies
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map(([code, rate]) => (
                     <TableRow key={code}>
@@ -74,7 +64,7 @@ const Exchange = () => {
             </Table>
             <TablePagination
               component="div"
-              count={Object.keys(currency.conversion_rates).length}
+              count={currencies.length}
               page={page}
               onPageChange={handleChangePage}
               rowsPerPage={rowsPerPage}

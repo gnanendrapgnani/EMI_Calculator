@@ -12,6 +12,7 @@ const ErrorPage = () => {
       alignItems="center"
       justifyContent="center"
       height="100vh"
+      gap="10px"
     >
       <Typography variant="h4">
         Something went wrong in the application.
