@@ -1,9 +1,3 @@
-# React JS 
-
-This project was developed as part of the technical assessment for the React JS Developer position at Novel Office.
-It demonstrates core React concepts such as component-based architecture, hooks, state management, routing,
-custom hooks, and modular structure. The project is built using [Vite](https://vitejs.dev/) for optimal development performance.
-
 ## 🔧 Tech Stack
 
 - React JS  
