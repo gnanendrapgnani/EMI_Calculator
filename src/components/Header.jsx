@@ -98,13 +98,13 @@ const Header = ({ darkMode, setDarkMode }) => {
                     {link.label}
                   </Box>
                 ))}
-                <Switch
-                  checked={darkMode}
-                  onChange={() => setDarkMode(!darkMode)}
-                  color="default"
-                />
               </Box>
             )}
+            <Switch
+              checked={darkMode}
+              onChange={() => setDarkMode(!darkMode)}
+              color="default"
+            />
           </Box>
         </Toolbar>
       </AppBar>
