@@ -1,4 +1,4 @@
-# React JS Developer Assessment – Novel Office
+# React JS 
 
 This project was developed as part of the technical assessment for the React JS Developer position at Novel Office.
 It demonstrates core React concepts such as component-based architecture, hooks, state management, routing,
