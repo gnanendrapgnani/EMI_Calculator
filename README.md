@@ -1,17 +1,94 @@
-## Running React on Replit
+# React JS Developer Assessment – Novel Office
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+This project was developed as part of the technical assessment for the React JS Developer position at Novel Office.
+It demonstrates core React concepts such as component-based architecture, hooks, state management, routing,
+custom hooks, and modular structure. The project is built using [Vite](https://vitejs.dev/) for optimal development performance.
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+## 🔧 Tech Stack
 
-Using the two in conjunction is one of the fastest ways to build a web app.
+- React JS  
+- Vite  
+- JavaScript (ES6+)  
+- React Router  
+- Custom Hooks  
+- Context API  
 
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
+## 🚀 Getting Started
 
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the [configuration file](#.replit). Here are the vite docs for [serving production websites](https://vitejs.dev/guide/build.html)
+Follow these steps to set up and run the project locally.
 
-### Typescript
+### Prerequisites
 
-Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
+Ensure that the following are installed:
+
+- Node.js (v14 or higher)  
+- npm (comes with Node.js)  
+- Git (optional, for cloning)
+
+### 📥 Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
+📦 Install Dependencies
+bash
+Copy
+Edit
+npm install
+▶️ Start the Development Server
+bash
+Copy
+Edit
+npm run dev
+Then open your browser and navigate to:
+
+arduino
+Copy
+Edit
+http://localhost:5173
+📁 Folder Structure
+pgsql
+Copy
+Edit
+novel-office/
+├── public/
+├── src/
+│   ├── components/
+│   │   └── Header.jsx
+│   ├── context/
+│   │   └── context.jsx
+│   ├── hooks/
+│   │   ├── useEMICalculation.js
+│   │   └── useExchangeRates.js
+│   ├── pages/
+│   │   ├── About.jsx
+│   │   ├── ErrorBoundary.jsx
+│   │   ├── ErrorPage.jsx
+│   │   ├── Exchange.jsx
+│   │   ├── Home.jsx
+│   │   └── NotFound.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   └── index.jsx
+├── .env
+├── .gitignore
+├── vite.config.js
+├── tsconfig.json
+├── index.html
+├── package.json
+└── README.md
+📌 Features
+⚛️ Functional Components and Hooks
+
+📡 API integration with custom hooks
+
+📄 EMI and Exchange rate calculations
+
+🧩 Modular component structure
+
+🔁 Routing and 404 page fallback
+
+💥 Error Boundary for exception handling
+
+🌐 Live Demo
+👉 [Live Hosted Link](https://emi-calculator-xyz.netlify.app/)
