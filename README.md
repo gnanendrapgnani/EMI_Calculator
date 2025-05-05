@@ -30,27 +30,22 @@ Ensure that the following are installed:
 ```bash
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 cd YOUR_REPO_NAME
-📦 Install Dependencies
-bash
-Copy
-Edit
+```
+### 📦 Install Dependencies
+``` 
 npm install
-▶️ Start the Development Server
-bash
-Copy
-Edit
+```
+### ▶️ Start the Development Server
+```
 npm run dev
-Then open your browser and navigate to:
+```
+### Then open your browser and navigate to:
 
-arduino
-Copy
-Edit
 http://localhost:5173
+
 📁 Folder Structure
-pgsql
-Copy
-Edit
-novel-office/
+```
+/
 ├── public/
 ├── src/
 │   ├── components/
@@ -77,18 +72,21 @@ novel-office/
 ├── index.html
 ├── package.json
 └── README.md
-📌 Features
-⚛️ Functional Components and Hooks
+```
 
-📡 API integration with custom hooks
+### 📌 Features
+-⚛️ Functional Components and Hooks
 
-📄 EMI and Exchange rate calculations
+-📡 API integration with custom hooks
 
-🧩 Modular component structure
+-📄 EMI and Exchange rate calculations
 
-🔁 Routing and 404 page fallback
+-🧩 Modular component structure
 
-💥 Error Boundary for exception handling
+-🔁 Routing and 404 page fallback
 
-🌐 Live Demo
+-💥 Error Boundary for exception handling
+
+### 🌐 Live Demo
+
 👉 [Live Hosted Link](https://emi-calculator-xyz.netlify.app/)
